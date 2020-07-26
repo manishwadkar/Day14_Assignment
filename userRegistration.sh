@@ -2,9 +2,11 @@
 
 echo "Welcome to User Registration system"
 
+LC_ALL=C        #to solve capital letters problem
+
 echo "Valid firstname should start with capital letter and minimum three letters"
 read -r -p "Enter first name: " fname
-pattern_fname="^[ABCDEFGHIJKLMNOPQRSTUVWXYZ]{1}[a-z]{2,}$"
+pattern_fname="^[A-Z]{1}[a-z]{2,}$"
 
 if [[ $fname =~ $pattern_fname ]]
 then
@@ -17,7 +19,7 @@ fi
 
 echo "Valid lastname should start with capital letter and minimum three letters"
 read -r -p "Enter last name: " lname
-pattern_lname="^[ABCDEFGHIJKLMNOPQRSTUVWXYZ]{1}[a-z]{2,}$"
+pattern_lname="^[A-Z]{1}[a-z]{2,}$"
 
 if [[ $lname =~ $pattern_lname ]]
 then
@@ -52,9 +54,10 @@ else
 fi
 
 echo "Enter a password with minimum 8 characters"
-read -p "Enter a password: " pass
-pattern_pass="[0-9a-zA-Z]{8,}"
-if [[ $pass =~ $pattern_pass ]]
+read -p "Enter a password: " passwd
+#pattern_pass="[0-9a-zA-Z]{8,}"
+pattern_pass1="[A-Z]{1,}"
+if [[ ${#passwd} -ge 8 ]] && [[ $passwd =~ $pattern_pass1 ]]
 then
 	echo "Password is valid"
 else
