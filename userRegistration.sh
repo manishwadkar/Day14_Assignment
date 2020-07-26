@@ -11,7 +11,7 @@ then
 	echo "First name entered is valid"
 else
 	echo "Invalid first name"
-	echo "Please being the process of User Registration from start"
+	echo "Please begin the process of User Registration from start"
 	exit
 fi
 
@@ -24,6 +24,17 @@ then
         echo "Last name entered is valid"
 else
         echo "Invalid last name"
-	echo "Please being the process of User Registration from start"
+	echo "Please begin the process of User Registration from start"
 	exit
+fi
+
+read -p "Enter email id: " email
+pattern_email="^[A-Za-z0-9]{1,}([._+-][0-9a-zA-Z]+)*[@]{1}[a-zA-Z0-9]{1,}\.[A-Za-z]{2,4}([.][a-zA-Z]{2,})?$"
+if [[ $email =~ $pattern_email ]]
+then
+        echo "Email id is valid"
+else
+        echo "Email id is invalid"
+	echo "Please begin the process of User Registration from start"
+        exit
 fi
