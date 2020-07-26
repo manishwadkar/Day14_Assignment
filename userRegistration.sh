@@ -38,3 +38,15 @@ else
 	echo "Please begin the process of User Registration from start"
         exit
 fi
+
+echo "Enter country code followed by space and ten digit mobile number"
+read -p "Enter valid mobile number: " mobile
+pattern_mobile="^[0-9]{2}[ ][1-9]{1}[0-9]{9}$"
+if [[ $mobile =~ $pattern_mobile ]]
+then
+        echo "Mobile number is valid"
+else
+        echo "Invalid Mobile number"
+	echo "Please begin the process of User Registration from start"
+        exit
+fi
