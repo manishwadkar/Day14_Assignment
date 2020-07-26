@@ -50,3 +50,15 @@ else
 	echo "Please begin the process of User Registration from start"
         exit
 fi
+
+echo "Enter a password with minimum 8 characters"
+read -p "Enter a password: " pass
+pattern_pass="[0-9a-zA-Z]{8,}"
+if [[ $pass =~ $pattern_pass ]]
+then
+	echo "Password is valid"
+else
+	echo "Invalid Password"
+	echo "Please begin the process of User Registration from start"
+        exit
+fi
