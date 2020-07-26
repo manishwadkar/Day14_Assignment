@@ -53,11 +53,13 @@ else
         exit
 fi
 
-echo "Enter a password with minimum 8 characters"
+echo "Enter a password with minimum 8 characters with atleast one Upper Case"
+echo "Password should have atleast 1 numeric character"
 read -p "Enter a password: " passwd
 #pattern_pass="[0-9a-zA-Z]{8,}"
 pattern_pass1="[A-Z]{1,}"
-if [[ ${#passwd} -ge 8 ]] && [[ $passwd =~ $pattern_pass1 ]]
+pattern_passnum="[0-9]{1,}"
+if [[ ${#passwd} -ge 8 ]] && [[ $passwd =~ $pattern_pass1 ]] && [[ $passwd =~ $pattern_passnum ]]
 then
 	echo "Password is valid"
 else
