@@ -69,3 +69,6 @@ else
 	echo "Please begin the process of User Registration from start"
         exit
 fi
+
+echo "All above usecases are sucessfully implemented "
+echo "Use case 9 implemented as it clears all the smaples provided which are already implemeneted in Use-case 3"
