@@ -55,11 +55,13 @@ fi
 
 echo "Enter a password with minimum 8 characters with atleast one Upper Case"
 echo "Password should have atleast 1 numeric character"
+echo "Password should have exact 1 special character"
 read -p "Enter a password: " passwd
 #pattern_pass="[0-9a-zA-Z]{8,}"
 pattern_pass1="[A-Z]{1,}"
 pattern_passnum="[0-9]{1,}"
-if [[ ${#passwd} -ge 8 ]] && [[ $passwd =~ $pattern_pass1 ]] && [[ $passwd =~ $pattern_passnum ]]
+pattern_spec_char="^[^\$@!%*?&\n]*[\$@!%*?&][^\$@!%*?&\n]*$"
+if [[ ${#passwd} -ge 8 ]] && [[ $passwd =~ $pattern_pass1 ]] && [[ $passwd =~ $pattern_passnum ]] && [[ $passwd =~ $pattern_spec_char ]]
 then
 	echo "Password is valid"
 else
